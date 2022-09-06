@@ -1,0 +1,14 @@
+package demo.drools
+
+import drools_demo.Student
+import drools_demo.Teacher
+
+rule "rule1"
+
+when
+ $s:Student()
+ $t:Teacher()
+then
+  int sum = $s.getAge() + $t.getAge();
+  $s.setAge(sum);
+end
